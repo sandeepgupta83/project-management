@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-    Grid, Heading, Box,
+    Grid, Heading, Box, Form,
     Table, TableHeader, TableRow, TableCell, TableBody
 } from 'grommet';
 import _ from 'underscore';
@@ -33,16 +33,16 @@ class Employee extends Component {
                 <TableHeader>
                     <TableRow>
                         <TableCell scope="col" border="bottom">
-                          Employee Name
+                          <strong>Employee Name</strong>
                         </TableCell>
                         <TableCell scope="col" border="bottom">
-                          Employee ID
+                          <strong>Employee ID</strong>
                         </TableCell>
                         <TableCell scope="col" border="bottom">
-                          Project ID
+                          <strong>Project ID</strong>
                         </TableCell>
                         <TableCell scope="col" border="bottom">
-                          Created At
+                          <strong>Created At</strong>
                         </TableCell>
                     </TableRow>
                 </TableHeader>
@@ -86,7 +86,7 @@ class Employee extends Component {
             <Box align="start" direction="row">
               <Box>
                 <Heading margin="small" pad="small" level="3" size="small" strong>
-                  {'Employee Services'}
+                  {'Employee Dashboard'}
                 </Heading>
               </Box>
             </Box>

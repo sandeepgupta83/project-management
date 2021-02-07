@@ -1,10 +1,14 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React, { Component } from 'react'
-import { Tabs, Tab, Image, Grommet, Box, Header, Text, Footer, Button, Grid} from 'grommet'
+import { Tabs, Tab, Grommet, Box, Header, Text, Footer, Button, Grid} from 'grommet'
 import { Projects } from 'grommet-icons'
 import { hpe as theme } from 'grommet-theme-hpe'
 import Employee from './screens/EmployeeService/Employee'
 import Project from './screens/ProjectService/Project'
+import EmployeeForm from './screens/EmployeeService/EmployeeForm'
+import AssignEmployee from './screens/EmployeeService/AssignEmployee'
+import ProjectForm from './screens/ProjectService/ProjectForm'
+import UpdateProject from './screens/ProjectService/UpdateProject'
 
 
 class ProjectManagementContainer extends Component {
@@ -61,8 +65,7 @@ class ProjectManagementContainer extends Component {
                         margin='small'
                         pad='small'
                     >
-                        <Text>Content for the First Tab</Text>
-                        <Project/>
+                      <Project/>
                     </Box>
                 </Tab>
                 <Tab title='Employees'>
@@ -70,8 +73,7 @@ class ProjectManagementContainer extends Component {
                         margin='small'
                         pad='small'
                     >
-                        <Text>Content for the Second Tab</Text>
-                        <Employee/>
+                      <Employee/>
                     </Box>
                 </Tab>
                 <Tab title='Add Project'>
@@ -80,7 +82,7 @@ class ProjectManagementContainer extends Component {
                         margin='small'
                         pad='small'
                     >
-                    <Image src='//v2.grommet.io/assets/Wilderpeople_Ricky.jpg' />
+                    <ProjectForm/>
                     </Box>
                 </Tab>
                 <Tab title='Add Employee'>
@@ -89,32 +91,29 @@ class ProjectManagementContainer extends Component {
                         margin='small'
                         pad='small'
                     >
-                    <Image src='//v2.grommet.io/assets/Wilderpeople_Ricky.jpg' />
+                    <EmployeeForm/>
+                    </Box>
+                </Tab>
+                <Tab title='Assign Employee'>
+                    <Box
+                        flex='grow'
+                        margin='small'
+                        pad='small'
+                    >
+                    <AssignEmployee/>
+                    </Box>
+                </Tab>
+                <Tab title='Update Project'>
+                    <Box
+                        flex='grow'
+                        margin='small'
+                        pad='small'
+                    >
+                    <UpdateProject/>
                     </Box>
                 </Tab>
                 
             </Tabs>
-              {/* {
-                data.map(value => (
-                  <Card
-                    key={value.title}
-                    onClick = {() => {
-                      alert(`Card Clicked!!!!!! + ${value.title} ${value.subTitle}`);
-                    }}>
-                    <CardBody pad="small">
-                      <Identifier
-                        title={value.title}
-                        subTitle={value.subTitle}
-                        size="small">
-                        {value.icon}  
-                      </Identifier>
-                    </CardBody>
-                    <CardFooter pad={{ horizontal: 'medium', vertical: 'small' }}>
-                      <Text size="xsmall">{value.message}</Text>
-                    </CardFooter>
-                  </Card>
-                ))
-              } */}
             </Grid>
           </Box>
           <Footer align="center" direction="row-responsive" flex={false} justify="between" gap="medium" fill="horizontal" pad="medium" background={{"color":"background-front"}}>

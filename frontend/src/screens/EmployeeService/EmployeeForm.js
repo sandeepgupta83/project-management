@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {
     Grid, Heading, Box,
-    Table, TableHeader, TableRow, TableCell, TableBody
+    Form, FormField, TextInput, Button
 } from 'grommet';
 import _ from 'underscore';
 import axios from '../../utils/axios'
 
-class Project extends Component {
+class ProjectForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -29,39 +29,27 @@ class Project extends Component {
     
     render() {
         let project_data = (
-            <Table>
-                <TableHeader>
-                    <TableRow>
-                        <TableCell scope="col" border="bottom">
-                          <strong>Project ID</strong>
-                        </TableCell>
-                        <TableCell scope="col" border="bottom">
-                          <strong>Project Name</strong>
-                        </TableCell>
-                        <TableCell scope="col" border="bottom">
-                          <strong>Description</strong>
-                        </TableCell>
-                        <TableCell scope="col" border="bottom">
-                          <strong>Start Date</strong>
-                        </TableCell>
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {
-                    this.state.allProjects.map(value => (
-                      <TableRow>
-                        <TableCell scope="row">
-                          <strong>{value.project_id}</strong>
-                        </TableCell>
-                      <TableCell>{value.name}</TableCell>
-                      <TableCell>{value.description}</TableCell>
-                      <TableCell>{value.start_date}</TableCell>
-                    </TableRow>
-                    ))
-                  }
-                </TableBody>
-            </Table>
-        );
+        <Form
+            value={'test'}
+            onChange={event => this.setValue(event.target.value)}
+            onReset={(event) => this.setValue(event.target.value)}
+            onSubmit={({ value }) => {}}
+        >
+            <FormField name="name" htmlFor="text-input-id" label="Full Name">
+                <TextInput id="text-input-id" name="name" />
+            </FormField>
+            <FormField name="name" htmlFor="text-input-id" label="Employee ID">
+                <TextInput id="text-input-id" name="name" />
+            </FormField>
+            <FormField name="name" htmlFor="text-input-id" label="Project ID">
+                <TextInput id="text-input-id" name="name" />
+            </FormField>
+            <Box direction="row" gap="medium">
+                <Button type="submit" primary label="Submit" />
+                <Button type="reset" label="Reset" />
+            </Box>
+        </Form>
+        );  
         return (
         <Grid
             // columns={['flex', 'medium']}
@@ -86,7 +74,7 @@ class Project extends Component {
             <Box align="start" direction="row">
               <Box>
                 <Heading margin="small" pad="small" level="3" size="small" strong>
-                  {'Project Dashboard'}
+                  {'Add Employee'}
                 </Heading>
               </Box>
             </Box>
@@ -105,4 +93,4 @@ class Project extends Component {
     }
 }
 
-export default Project;
+export default ProjectForm;
